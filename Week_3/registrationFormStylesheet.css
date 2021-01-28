@@ -1,0 +1,18 @@
+body {
+    font-family: 'Coda Caption', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    background-color: darkcyan;
+    background-image: linear-gradient(to right, orange,violet);
+}
+
+.jumbotron {
+    background-color: rgba(241, 186, 3, 0.589);
+    color: #030303;
+    text-shadow: 2px 3px darkcyan;
+    text-align: left;
+}
+
+/* #grad {
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+  }
+*/

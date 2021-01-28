@@ -1,0 +1,21 @@
+.jumbotron {
+    background-color: rgb(25, 30, 95);
+    color: #f34cae;
+    text-shadow: 2px 3px greenyellow;
+    text-align: center;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f77dc4;
+}
+
+#desc {
+    font-size: 20px;
+}
+
+#gthb {
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 3px rgb(47, 78, 255);
+}

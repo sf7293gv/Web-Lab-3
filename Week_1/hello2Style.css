@@ -1,0 +1,37 @@
+body {
+    background-color: darkgoldenrod;
+    font-family: 'Gill Sans';
+    color: #444444;
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+}
+
+img {
+    border-radius: 15px;
+}
+
+li {
+    list-style-type: square;
+}
+
+table, tr, th, td {
+    border: black solid;
+    border-collapse: collapse;
+}
+
+th {
+    width: 100px;
+    background-color: white;
+}
+
+td {
+    text-align: center;
+    background-color: gray;
+}
+
+/* tr:nth-child(odd) {
+    background-color: aquamarine;
+} */

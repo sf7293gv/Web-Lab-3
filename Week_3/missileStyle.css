@@ -1,0 +1,28 @@
+.real-section{
+    background-color: rgb(247, 8, 87);
+    border: 3px black double;
+    margin: 10px;
+    padding: 25px;
+}
+
+.test-section{
+    background-color: rgb(97, 97, 97);
+    border: 3px black double;
+    margin: 10px;
+    padding: 15px;
+}
+
+#realMessage{
+    font-size: 50px;
+    color: aquamarine;
+    text-shadow: 4px 4px black;
+}
+
+#real-alert{
+    font-size: 15px;
+}
+
+#test-only{
+    font-size: 30px;
+    text-align: center;
+}
