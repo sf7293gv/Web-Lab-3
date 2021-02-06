@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>What is the capital of Jordan</p>
+
+<button id="correct">Amman</button>
+<button class="wrong">Minneapolis</button>
+<button class="wrong">London</button>
+
+<p id="result"></p>
+
+<script>
+
+    let correctAnswer = document.querySelector('#correct'); // A variable to store the selector's selection of the id of the button.
+    console.log(correctAnswer); // log will pop up in the console, to show what button is selected
+
+    let result = document.querySelector('#result'); // a variable to store the result paragraph
+
+    let defaultButtonColor = correctAnswer.style.background;
+
+    correctAnswer.addEventListener('click', function () { // if this button is clicked
+        result.innerHTML = 'Correct answer!'; // change the paragraph
+        correctAnswer.style.background = 'cyan'; // and the color of the button
+    })
+
+    let wrongAnswers = document.querySelectorAll('.wrong'); // store a list of the other buttons
+    console.log(wrongAnswers) // create a log in the console of the browser
+
+    // functional style programming/loop
+    // wrongAnswers.forEach(function (wrongAnswer) { // loop over the list
+    //     wrongAnswer.addEventListener('click', function () {
+    //         result.innerHTML = 'Wrong Answer!'
+    //         correctAnswer.style.background = defaultButtonColor;
+    //         //wrongAnswer.style.background = 'red';
+    //     });
+    // });
+
+    for (let x = 0; x < wrongAnswers.length; x++) {
+        let wrongAnswer = wrongAnswers[x];
+        wrongAnswer.addEventListener('click', function () {
+            result.innerHTML = 'Wrong answer';
+            correctAnswer.style.background = defaultButtonColor;
+            // wrongAnswer.style.background = 'red';
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

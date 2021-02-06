@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabbed Content</title>
+    <link rel="stylesheet" type="text/css" href="tabsStyle.css">
+</head>
+<body>
+
+<h1>Fav Foods</h1>
+
+<div id="tabs">
+    <button data-content-id="pizza" class="tab-button">Pizza</button>
+    <button data-content-id="cheesecake" class="tab-button">Cheesecake</button>
+    <button data-content-id="sushi" class="tab-button">Sushi</button>
+</div>
+
+<div id="pizza" class="tab-content">Pizza is awesome</div>
+<div id="cheesecake" class="tab-content">Cheesecake is delicious</div>
+<div id="sushi" class="tab-content">Sushi is amazing</div>
+
+<script>
+
+    let buttons = document.querySelectorAll('.tab-button');
+    let tabContents = document.querySelectorAll('.tab-content')
+
+    tabContents.forEach(function (divEl) {
+        divEl.style.display = 'none';
+    });
+
+    // let pizzaButton = document.querySelector('#pizza');
+    // let cheesecakeButton = document.querySelector('#cheesecake');
+    // let sushiButton = document.querySelector('#sushi');
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            tabContents.forEach(function (divEl) {
+                divEl.style.display = 'none';
+            });
+            buttons.forEach(function (button) {
+                button.classList.remove('active');
+            });
+            this.classList.add('active');
+            let contentId = this.getAttribute('data-content-id');
+            let tabContent = document.querySelector('#' + contentId);
+            tabContent.style.display = 'block';
+        });
+    });
+
+</script>
+
+</body>
+</html>

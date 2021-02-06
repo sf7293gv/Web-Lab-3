@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Enter some text ot add to the list</p>
+<input id="new-text">
+<button id="add-Text">Add</button>
+<button id="clearAll">Clear</button>
+
+<ul id="list-of-text"></ul>
+<script>
+
+    let textInput = document.querySelector('#new-text');
+    let addButton = document.querySelector('#add-Text');
+    let textList = document.querySelector('#list-of-text');
+
+    let elementsInList = 0;
+    let maxListElements = 10;
+
+    document.addEventListener('keyup', function () {
+        if (event.keyCode == 13) {
+            addButton.click();
+        }
+    });
+
+    addButton.addEventListener('click', function () {
+        let newTextValue = textInput.value;
+
+        if (newTextValue.length == 0) {
+            alert("Enter text");
+            return;
+        } else {
+            if (elementsInList >= maxListElements) {
+                alert('No more elements can be added');
+                return;
+            } else {
+                console.log(newTextValue);
+                let newListItemLi = document.createElement('li');
+                newListItemLi.innerHTML = newTextValue;
+                textList.appendChild(newListItemLi);
+                textInput.value = '';
+                elementsInList++;
+            }
+        }
+    });
+
+    let clearButton = document.querySelector('#clearAll')
+    clearButton.addEventListener('click', function () {
+        textList.innerHTML = '';
+        elementsInList = 0;
+    });
+
+</script>
+
+</body>
+</html>

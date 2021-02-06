@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>Click here</button>
+
+<script>
+
+    let button = document.querySelector('button'); // a variable
+
+    // button.addEventListener('click', function () {
+    //     alert('You clicked the button!')
+    // });
+
+    // another way of writing the function:
+
+    function showAlert() { // here the function is defined separately, up there it's defined within the listener
+        alert('You clicked the button!');
+        button.innerHTML = 'Clicked'; // change the name of the button
+        button.style.backgroundColor = 'red'; // change the color of the button
+        // button.remove(); // removes the button
+    }
+
+    button.addEventListener('click', showAlert);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="width">Width</h1>
+
+<script>
+
+    function displayWidth() {
+        let width = document.body.scrollWidth;
+        let widthDisplayEl = document.querySelector('#width');
+        widthDisplayEl.innerHTML = `Window width = ${width} pixels`;
+    }
+
+    displayWidth(); // call the method to display initial size
+
+    // add resize event listener to the window object
+    // to update the window is resized
+
+    window.addEventListener('resize', displayWidth)
+
+
+</script>
+
+</body>
+</html>

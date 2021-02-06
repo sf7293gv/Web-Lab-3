@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="textbox">
+<button id="addButton">Add</button>
+<ul id="unordered-list"></ul>
+
+<button id="clearAll">Clear</button>
+
+
+
+<script>
+    let elementsInList = 0; // counter
+    let maxListElements = 10; // counter
+
+    let text = document.querySelector('#textbox'); // select the text box (not the value)
+    let addButton = document.querySelector('#addButton'); // select the button
+    let list = document.querySelector('#unordered-list'); // select the list
+
+    document.addEventListener('keyup', function () { // add item when enter is clicked
+        if (event.keyCode == 13) {
+            addButton.click();
+        }
+    });
+
+    addButton.addEventListener('click', function () { // if the button is clicked:
+        let textof = text.value; // a new variable with the value of the text box in it
+
+        if (textof.length == 0) { // if there is no text, display this message add do not add it
+            alert("Enter text");
+            return;
+        } else {
+            if (textof.length > 50) { // if the text has more than 50 chars, display this message and do not add it
+                alert("Text too long");
+                return;
+            } else {
+                if (elementsInList >= maxListElements) { // a way of making sure that there are no more than 10 items in the list
+                    alert('No more elements can be added'); // if there is more than 10, show this message and do not add the new item (the text)
+                    return;
+                } else { // else (if the text passes all of the if statements) add it.
+                    let addNewElement = document.createElement('li'); // a new variable to create a list item
+                    addNewElement.innerHTML = textof; // assign the value of the text box to the new list item
+                    list.appendChild(addNewElement); // add the list item to the list
+                    text.value = ''; // clear the text box
+                    elementsInList++; // add 1 to the counter
+                }
+            }
+        }
+    });
+
+    let clearAllButton = document.querySelector('#clearAll'); // select the clear button
+    let allElements = document.querySelectorAll('li'); // select all the li elements
+    clearAllButton.addEventListener('click', function () { // if the button is clicked:
+        list.innerHTML = ''; // remove all the li elements (empty string)
+        elementsInList = 0; // reset the counter (if it wasn't reset, no items will be added still)
+    });
+
+
+
+</script>
+
+</body>
+</html>

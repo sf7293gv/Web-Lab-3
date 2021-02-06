@@ -1,0 +1,29 @@
+.tab-button {
+    background-color: #666699;
+    border: none;
+    padding: 10px;
+    margin: 1px;
+    outline: none;
+}
+
+.tab-button:hover {
+    background-color: #f7984b;
+}
+
+.tab-button.active {
+/*    only applied to element with class tab-button & class active
+*/
+    background-color: #f34cae;
+}
+
+#tabs {
+    /*background-color: #f34cae;*/
+    border: 1px solid darkcyan;
+}
+
+.tab-content {
+    border-right: 1px solid darkcyan;
+    border-left: 1px solid darkcyan;
+    border-bottom: 1px solid darkcyan;
+    padding: 10px;
+}
