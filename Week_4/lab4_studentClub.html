@@ -74,6 +74,7 @@
 
     */
     let clubStudentsNum = document.querySelector('#student-count');
+    let students = 0; // a students counter variable
     clubStudentsNum.innerHTML = '0';
     // these are variable that contain:
     let addButton = document.querySelector('#add-student'); // the Add Student button
@@ -116,6 +117,8 @@
                     // addNewElement.addEventListener('click', function () {
                     //     addNewElement.classList.remove('selected');
                     // });
+                    students = students + 1; // add 1 to the currents club students variable
+                    clubStudentsNum.innerHTML = '' + students; // show the num of students in the page
                 }
             }
         }
@@ -124,7 +127,9 @@
         let students2delete = document.querySelectorAll('.selected'); // a variable that contains all the li elements with the "selected" class
         students2delete.forEach(function (student) { // loop over every element and add a function for each element
             student.remove(); // remove the element (each)
+            students = students - 1; // sub 1 from the current students variable
         });
+        clubStudentsNum.innerHTML = '' + students; // display the num of students
     });
 
 
