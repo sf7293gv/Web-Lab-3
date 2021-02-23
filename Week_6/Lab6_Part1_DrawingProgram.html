@@ -17,12 +17,18 @@
 
 
 <P>Drag the mouse on the canvas</P>
-<canvas id="canvas" height="400" width="400"></canvas>
+<p>Select a color to draw with:</p>
+<input id="color" type="color"><br><br>
+<input id="radius" type="range">
+<br>
+<canvas id="canvas" height="400" width="400"></canvas><br>
 
 <script>
 
     let canvas = document.querySelector('#canvas')
     let context = canvas.getContext('2d')
+    let color = document.querySelector('#color') // the container of the color value
+    let radius = document.querySelector('#radius') // the container of the radius value
 
     // Keep track of whether the mouse button has been pressed down or not.
     // Think of this as whether the user is drawing or not, is their brush on the canvas?
@@ -54,9 +60,9 @@
         //Draw a filled rectangle centered under the mouse click
         //x, y is the top left corner, so shift up and left by 5 to center it under the mouse.
         // context.fillRect(x-5, y-5, 10, 10)
-        context.fillStyle = "#000000" // the color that will be used
+        context.fillStyle = color.value // the color that will be used
         context.beginPath(); // start a new path so we can draw on the canvas
-        context.arc(x, y, 10, 0, 2 * Math.PI)
+        context.arc(x, y, radius.value, 0, 2 * Math.PI)
         context.fill(); // fills the circles with the style we want (color)
     })
 
