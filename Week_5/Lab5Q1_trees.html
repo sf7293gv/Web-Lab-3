@@ -108,8 +108,9 @@
         if (cityValue.length == 0) { // if the user doesn't enter a city
             errors.push("Enter a city."); // add this alert to the errors array
         }
-        if (zipcodeValue.length == 0) { // if the user doesn't enter a
-            errors.push("Enter a zipcode."); // add this alert to the errors array
+        if (zipcodeValue.length != 0) { // if the user doesn't enter a
+            if (zipcodeValue < 55001 || zipcodeValue > 56763) // or if the value isn't...
+            errors.push("Enter a zipcode between 55001 and 56763."); // add this alert to the errors array
         }
 
         if (errors.length > 0) { // if there is any error in the array
