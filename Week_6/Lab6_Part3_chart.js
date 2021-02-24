@@ -1,7 +1,7 @@
 
 
-let chartCanvas = document.querySelector('#chart')
-let ctx = chartCanvas.getContext('2d')
+let chartCanvas = document.querySelector('#chart') // this variable will contain the chart's canvas
+let ctx = chartCanvas.getContext('2d') // context
 
 
 bridges = [ // an array that contains 5 objects that contain information about the bridges
@@ -12,7 +12,7 @@ bridges = [ // an array that contains 5 objects that contain information about t
     {name: "Tacoma Narrows Bridge", cityState: "Tacoma and Kitsap, WA", span: 853.44, coordiantes: [47.2690, -122.5517]}
 ]
 
-let barChart = new Chart(ctx, {
+let barChart = new Chart(ctx, { // the chart
     type: 'bar',
     data: {
         labels: [],
@@ -35,7 +35,7 @@ let barChart = new Chart(ctx, {
     }
 })
 
-bridges.forEach(function (b) {
-    barChart.data.labels.push(b.name);
-    barChart.data.datasets[0].data.push(b.span);
+bridges.forEach(function (b) { // for each bridge in the bridges object,
+    barChart.data.labels.push(b.name); // add its name to the chart
+    barChart.data.datasets[0].data.push(b.span); // add its span length to the chart
 });
