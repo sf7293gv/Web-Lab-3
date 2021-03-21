@@ -1,6 +1,8 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 10px;
+    background-color: darkcyan;
+    background-image: linear-gradient(to right, gray, gainsboro,white, wheat); /* rgb(154, 255, 206)  rgb(57, 255, 255)*/
 }
 
 #map {
@@ -28,4 +30,11 @@ body {
     border: 25px;
     max-width: 25px;
     margin: auto;
+}
+
+.jumbotron {
+    background-color: rgb(193, 255, 255);
+    color: red;
+    text-shadow: 2px 3px blue;
+    text-align: center;
 }
